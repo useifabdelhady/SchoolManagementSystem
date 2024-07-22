@@ -12,6 +12,8 @@
             public const string Prefix = Rule + "Student";
             public const string List = Prefix + "/List";
             public const string GetByID = Prefix + SignleRoute;
+            public const string Create = Prefix + "/Create";
+
         }
 
 
