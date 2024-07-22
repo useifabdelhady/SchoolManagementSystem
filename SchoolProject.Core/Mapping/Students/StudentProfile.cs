@@ -7,6 +7,7 @@ namespace SchoolProject.Core.Mapping.Students
         public StudentProfile()
         {
             GetStudentListMapping();
+            GetStudentByIDMapping();
         }
     }
 }
