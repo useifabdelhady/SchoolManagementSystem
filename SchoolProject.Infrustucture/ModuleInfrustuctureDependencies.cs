@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SchoolProject.Infrustucture.Abstracts;
+using SchoolProject.Infrustucture.InfrustuctureBases;
 using SchoolProject.Infrustucture.Repositories;
 
 namespace SchoolProject.Infrustucture
@@ -9,6 +10,7 @@ namespace SchoolProject.Infrustucture
         public static IServiceCollection AddInfrustuctureDependencies(this IServiceCollection services)
         {
             services.AddTransient<IStudentRepository, StudentRepository>();
+            services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             return services;
         }
     }
