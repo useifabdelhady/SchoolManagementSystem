@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolProject.Core;
+using SchoolProject.Core.MiddleWare;
 using SchoolProject.Infrustucture;
 using SchoolProject.Infrustucture.Data;
 using SchoolProject.Service;
@@ -31,6 +32,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ErrorHandlerMiddleware>();
+
 
 app.UseHttpsRedirection();
 
