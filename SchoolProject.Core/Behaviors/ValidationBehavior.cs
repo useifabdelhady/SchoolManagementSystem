@@ -24,7 +24,7 @@ namespace SchoolProject.Core.Behaviors
 
                 if (failures.Count != 0)
                 {
-                    var message = failures.Select(x => x.PropertyName + ": " + x.ErrorMessage).FirstOrDefault();
+                    var message = failures.Select(x => x.ErrorMessage).FirstOrDefault();
 
                     throw new ValidationException(message);
 

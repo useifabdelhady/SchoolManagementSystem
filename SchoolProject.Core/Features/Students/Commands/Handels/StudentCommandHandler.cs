@@ -8,7 +8,8 @@ using SchoolProject.Service.Abstracts;
 namespace SchoolProject.Core.Features.Students.Commands.Handels
 {
     public class StudentCommandHandler : ResponseHandler,
-                                               IRequestHandler<AddStudentCommand, Response<string>>
+                                               IRequestHandler<AddStudentCommand, Response<string>>,
+                                               IRequestHandler<EditStudentCommand, Response<string>>
     {
         #region Fields
         private readonly IStudentService _studentService;
@@ -30,10 +31,25 @@ namespace SchoolProject.Core.Features.Students.Commands.Handels
             var studentmapper = _mapper.Map<Student>(request);
             //add
             var result = await _studentService.AddAsync(studentmapper);
-            //check Condition
-            if (result == "Exist") return UnprocessableEntity<string>("Name is Exist");
+
             //return
-            else if (result == "Success") return Created("Added Sucssesfully");
+            if (result == "Success") return Created("Added Sucssesfully");
+            else return BadRequest<string>();
+        }
+
+        public async Task<Response<string>> Handle(EditStudentCommand request, CancellationToken cancellationToken)
+        {
+            //Check if the Id is Exist Or not 
+            var student = await _studentService.GetStudentByIDAsync(request.Id);
+            //return NotFound
+            if (student == null) return NotFound<string>("Student is Not found");
+            //Mapping between request and response
+            var studentmapper = _mapper.Map<Student>(request);
+
+            //Call service that make edit
+            var result = await _studentService.EditAsync(studentmapper);
+            // return response
+            if (result == "Success") return Success($"Edited Sucssesfully {studentmapper.StudID}");
             else return BadRequest<string>();
         }
         #endregion
