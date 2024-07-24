@@ -9,7 +9,8 @@ namespace SchoolProject.Core.Features.Students.Commands.Handels
 {
     public class StudentCommandHandler : ResponseHandler,
                                                IRequestHandler<AddStudentCommand, Response<string>>,
-                                               IRequestHandler<EditStudentCommand, Response<string>>
+                                               IRequestHandler<EditStudentCommand, Response<string>>,
+                                               IRequestHandler<DeleteStudentCommand, Response<string>>
     {
         #region Fields
         private readonly IStudentService _studentService;
@@ -40,7 +41,7 @@ namespace SchoolProject.Core.Features.Students.Commands.Handels
         public async Task<Response<string>> Handle(EditStudentCommand request, CancellationToken cancellationToken)
         {
             //Check if the Id is Exist Or not 
-            var student = await _studentService.GetStudentByIDAsync(request.Id);
+            var student = await _studentService.GetStudentByIDWithIncludeAsync(request.Id);
             //return NotFound
             if (student == null) return NotFound<string>("Student is Not found");
             //Mapping between request and response
@@ -50,6 +51,18 @@ namespace SchoolProject.Core.Features.Students.Commands.Handels
             var result = await _studentService.EditAsync(studentmapper);
             // return response
             if (result == "Success") return Success($"Edited Sucssesfully {studentmapper.StudID}");
+            else return BadRequest<string>();
+        }
+
+        public async Task<Response<string>> Handle(DeleteStudentCommand request, CancellationToken cancellationToken)
+        {
+            //Check if the Id is Exist Or not 
+            var student = await _studentService.GetByIDAsync(request.Id);
+            //return NotFound
+            if (student == null) return NotFound<string>("Student is Not found");
+            //Call Service that make delete
+            var result = await _studentService.DeleteAsync(student);
+            if (result == "Success") return Deleted<string>($"Deleted Sucssesfully {request.Id}");
             else return BadRequest<string>();
         }
         #endregion
