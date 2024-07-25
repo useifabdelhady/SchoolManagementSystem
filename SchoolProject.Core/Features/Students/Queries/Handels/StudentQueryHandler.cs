@@ -20,18 +20,18 @@ namespace SchoolProject.Core.Features.Students.Queries.Handels
         #region Fields
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
-        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
+        private readonly IStringLocalizer<SharedResources> _localizer;
 
         #endregion
 
         #region Constructors
         public StudentQueryHandler(IStudentService studentService,
             IMapper mapper,
-            IStringLocalizer<SharedResources> stringLocalizer)
+            IStringLocalizer<SharedResources> localizer) : base(localizer)
         {
             _studentService = studentService;
             _mapper = mapper;
-            _stringLocalizer = stringLocalizer;
+            _localizer = localizer;
         }
 
         public override bool Equals(object? obj)
@@ -56,7 +56,7 @@ namespace SchoolProject.Core.Features.Students.Queries.Handels
         public async Task<Response<GetSingleStudentResponse>> Handle(GetStudentByIDQuery request, CancellationToken cancellationToken)
         {
             var student = await _studentService.GetStudentByIDWithIncludeAsync(request.Id);
-            if (student == null) return NotFound<GetSingleStudentResponse>(_stringLocalizer[SharedResourcesKeys.NotFound]);
+            if (student == null) return NotFound<GetSingleStudentResponse>(_localizer[SharedResourcesKeys.NotFound]);
             var result = _mapper.Map<GetSingleStudentResponse>(student);
             return Success(result);
         }

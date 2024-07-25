@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Localization;
 using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Students.Commands.Models;
+using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities;
 using SchoolProject.Service.Abstracts;
 
@@ -15,13 +17,18 @@ namespace SchoolProject.Core.Features.Students.Commands.Handels
         #region Fields
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
+        private readonly IStringLocalizer<SharedResources> _localizer;
+
         #endregion
 
         #region Constructors
-        public StudentCommandHandler(IStudentService studentService, IMapper mapper)
+        public StudentCommandHandler(IStudentService studentService,
+            IMapper mapper,
+            IStringLocalizer<SharedResources> localizer) : base(localizer)
         {
             _studentService = studentService;
             _mapper = mapper;
+            _localizer = localizer;
         }
         #endregion
 
@@ -34,7 +41,7 @@ namespace SchoolProject.Core.Features.Students.Commands.Handels
             var result = await _studentService.AddAsync(studentmapper);
 
             //return
-            if (result == "Success") return Created("Added Sucssesfully");
+            if (result == "Success") return Created("");
             else return BadRequest<string>();
         }
 
