@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SchoolProject.Data.Commons;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolProject.Data.Entities
 {
-    public partial class Department
+    public partial class Department : GeneralLocalizableEntity
     {
         public Department()
         {
