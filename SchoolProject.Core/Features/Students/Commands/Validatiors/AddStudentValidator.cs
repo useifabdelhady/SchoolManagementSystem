@@ -28,20 +28,20 @@ namespace SchoolProject.Core.Features.Students.Commands.Validatiors
         {
             RuleFor(x => x.Name)
                 .NotEmpty().WithMessage(_localizer[SharedResourcesKeys.NotEmpty])
-                .NotNull().WithMessage("Name Must not Be Null")
-                .MaximumLength(10).WithMessage("Max Lenth is 10");
+                .NotNull().WithMessage(_localizer[SharedResourcesKeys.Required])
+                .MaximumLength(100).WithMessage(_localizer[SharedResourcesKeys.MaxLengthis100]);
 
             RuleFor(x => x.Address)
-                .NotEmpty().WithMessage("{PropertyName} Must not Be Empty")
-                .NotNull().WithMessage("{PropertyValue} Must not Be Null")
-                .MaximumLength(10).WithMessage("{PropertyName} Lenth is 10");
+                .NotEmpty().WithMessage(_localizer[SharedResourcesKeys.NotEmpty])
+                .NotNull().WithMessage(_localizer[SharedResourcesKeys.Required])
+                .MaximumLength(100).WithMessage(_localizer[SharedResourcesKeys.MaxLengthis100]);
 
         }
         public void ApplyCustomValidationRules()
         {
             RuleFor(x => x.Name)
                 .MustAsync(async (Key, CancellationToken) => !await _studentService.IsNameExist(Key))
-                .WithMessage("Name Is Exist");
+                .WithMessage(_localizer[SharedResourcesKeys.IsExist]);
         }
         #endregion
 

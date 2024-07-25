@@ -12,7 +12,9 @@ namespace SchoolProject.Data.Entities
         [Key]
         public int DID { get; set; }
         [StringLength(500)]
-        public string DName { get; set; }
+        public string DNameAr { get; set; }
+        [StringLength(200)]
+        public string DNameEn { get; set; }
         public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<DepartmetSubject> DepartmentSubjects { get; set; }
     }
