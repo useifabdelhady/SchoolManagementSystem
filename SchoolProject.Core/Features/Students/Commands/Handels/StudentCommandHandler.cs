@@ -52,7 +52,7 @@ namespace SchoolProject.Core.Features.Students.Commands.Handels
             //return NotFound
             if (student == null) return NotFound<string>("Student is Not found");
             //Mapping between request and response
-            var studentmapper = _mapper.Map<Student>(request);
+            var studentmapper = _mapper.Map(request, student);
 
             //Call service that make edit
             var result = await _studentService.EditAsync(studentmapper);

@@ -26,7 +26,7 @@ namespace SchoolProject.Core.Features.Students.Commands.Validatiors
         #region Action
         public void ApplyValidationRules()
         {
-            RuleFor(x => x.Name)
+            RuleFor(x => x.NameAr)
                 .NotEmpty().WithMessage(_localizer[SharedResourcesKeys.NotEmpty])
                 .NotNull().WithMessage(_localizer[SharedResourcesKeys.Required])
                 .MaximumLength(100).WithMessage(_localizer[SharedResourcesKeys.MaxLengthis100]);
@@ -39,7 +39,7 @@ namespace SchoolProject.Core.Features.Students.Commands.Validatiors
         }
         public void ApplyCustomValidationRules()
         {
-            RuleFor(x => x.Name)
+            RuleFor(x => x.NameAr)
                 .MustAsync(async (Key, CancellationToken) => !await _studentService.IsNameExist(Key))
                 .WithMessage(_localizer[SharedResourcesKeys.IsExist]);
         }
