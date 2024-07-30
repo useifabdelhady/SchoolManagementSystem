@@ -40,8 +40,12 @@ namespace SchoolProject.Core.Features.Students.Commands.Validatiors
         public void ApplyCustomValidationRules()
         {
             RuleFor(x => x.NameAr)
-                .MustAsync(async (Key, CancellationToken) => !await _studentService.IsNameExist(Key))
+                .MustAsync(async (Key, CancellationToken) => !await _studentService.IsNameArExist(Key))
                 .WithMessage(_localizer[SharedResourcesKeys.IsExist]);
+            RuleFor(x => x.NameEn)
+                .MustAsync(async (Key, CancellationToken) => !await _studentService.IsNameEnExist(Key))
+                .WithMessage(_localizer[SharedResourcesKeys.IsExist]);
+
         }
         #endregion
 
