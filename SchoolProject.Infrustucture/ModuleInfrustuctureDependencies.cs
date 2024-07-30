@@ -10,6 +10,9 @@ namespace SchoolProject.Infrustucture
         public static IServiceCollection AddInfrustuctureDependencies(this IServiceCollection services)
         {
             services.AddTransient<IStudentRepository, StudentRepository>();
+            services.AddTransient<IDepartmentRepository, DepartmentRepository>();
+            services.AddTransient<IInstructorsRepository, InstructorsRepository>();
+            services.AddTransient<ISubjectRepository, SubjectRepository>();
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             return services;
         }
