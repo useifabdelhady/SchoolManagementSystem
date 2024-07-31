@@ -16,6 +16,7 @@ namespace SchoolProject.Service.Abstracts
         public Task<string> EditAsync(Student student);
         public Task<string> DeleteAsync(Student student);
         public IQueryable<Student> GetStudentsQuerable();
+        public IQueryable<Student> GetStudentsByDepartmentIDQuerable(int DID);
         public IQueryable<Student> FilterStudentPaginatedQuerable(StudentOrderingEnum orderingEnum, string search);
 
 

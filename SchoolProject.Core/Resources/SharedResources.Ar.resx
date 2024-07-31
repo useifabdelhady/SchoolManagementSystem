@@ -145,7 +145,7 @@
     <value>هذا الحقل مطلوب</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>تم الاضافه بنجاح</value>
+    <value>تم العمليه بنجاح</value>
   </data>
   <data name="UnAuthorized" xml:space="preserve">
     <value>لاتملك الصلاحيه للوصول لتلك المصادر</value>
