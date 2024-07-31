@@ -15,8 +15,8 @@ namespace SchoolProject.Service.Implementations
 
         #region Constructors
         public DepartmentService(IDepartmentRepository departmentRepository
-                                   /*  IViewRepository<ViewDepartment> viewDepartmentRepository,
-                                     IDepartmentStudentCountProcRepository departmentStudentCountProcRepository*/)
+                                     /*  IViewRepository<ViewDepartment> viewDepartmentRepository,
+                                       IDepartmentStudentCountProcRepository departmentStudentCountProcRepository*/)
         {
             _departmentRepository = departmentRepository;
             /* _viewDepartmentRepository = viewDepartmentRepository;
@@ -39,10 +39,10 @@ namespace SchoolProject.Service.Implementations
             return student;
         }
 
-        /*  public async Task<bool> IsDepartmentIdExist(int departmentId)
-          {
-              return await _departmentRepository.GetTableNoTracking().AnyAsync(x => x.DID.Equals(departmentId));
-          }*/
+        public async Task<bool> IsDepartmentIdExist(int departmentId)
+        {
+            return await _departmentRepository.GetTableNoTracking().AnyAsync(x => x.DID.Equals(departmentId));
+        }
         /*  public async Task<List<ViewDepartment>> GetViewDepartmentDataAsync()
           {
               var viewDepartment = await _viewDepartmentRepository.GetTableNoTracking().ToListAsync();
