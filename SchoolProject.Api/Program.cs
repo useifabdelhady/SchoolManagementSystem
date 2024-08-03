@@ -8,6 +8,7 @@ using SchoolProject.Infrustucture.Data;
 using SchoolProject.Service;
 using System.Globalization;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -24,7 +25,8 @@ builder.Services.AddDbContext<ApplicationDBContext>(option =>
 #region Dependiency injections
 builder.Services.AddInfrustuctureDependencies()
                 .AddServiceDependencies()
-                .AddCoreDependencies();
+                .AddCoreDependencies()
+                .AddServiceRegisteration();
 #endregion
 
 #region Localization
