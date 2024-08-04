@@ -120,11 +120,17 @@
   <data name="BadRequest" xml:space="preserve">
     <value>Request Can't Be Understand</value>
   </data>
+  <data name="ChangePassFailed" xml:space="preserve">
+    <value>Change Password Failed</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>Created Successfully</value>
   </data>
   <data name="Deleted" xml:space="preserve">
     <value>Deleted Successfully</value>
+  </data>
+  <data name="DeletedFailed" xml:space="preserve">
+    <value>Delete Operation Failed</value>
   </data>
   <data name="DepartmentId" xml:space="preserve">
     <value>Department Id</value>

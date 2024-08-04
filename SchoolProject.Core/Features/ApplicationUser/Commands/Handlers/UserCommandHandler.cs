@@ -12,7 +12,9 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
 {
     public class UserCommandHandler : ResponseHandler,
              IRequestHandler<AddUserCommand, Response<string>>,
-              IRequestHandler<EditUserCommand, Response<string>>
+              IRequestHandler<EditUserCommand, Response<string>>,
+        IRequestHandler<DeleteUserCommand, Response<string>>,
+         IRequestHandler<ChangeUserPasswordCommand, Response<string>>
     {
         #region Fields
         private readonly IMapper _mapper;
@@ -78,6 +80,37 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
             //message
             return Success((string)_sharedResources[SharedResourcesKeys.Updated]);
 
+        }
+        public async Task<Response<string>> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
+        {
+            //check if user is exist
+            var user = await _userManager.FindByIdAsync(request.Id.ToString());
+            //if Not Exist notfound
+            if (user == null) return NotFound<string>();
+            //Delete the User
+            var result = await _userManager.DeleteAsync(user);
+            //in case of Failure
+            if (!result.Succeeded) return BadRequest<string>(_sharedResources[SharedResourcesKeys.DeletedFailed]);
+            return Success((string)_sharedResources[SharedResourcesKeys.Deleted]);
+        }
+
+        public async Task<Response<string>> Handle(ChangeUserPasswordCommand request, CancellationToken cancellationToken)
+        {
+            //get user
+            //check if user is exist
+            var user = await _userManager.FindByIdAsync(request.Id.ToString());
+            //if Not Exist notfound
+            if (user == null) return NotFound<string>();
+
+            //Change User Password
+            var result = await _userManager.ChangePasswordAsync(user, request.CurrentPassword, request.NewPassword);
+            //var user1=await _userManager.HasPasswordAsync(user);
+            //await _userManager.RemovePasswordAsync(user);
+            //await _userManager.AddPasswordAsync(user, request.NewPassword);
+
+            //result
+            if (!result.Succeeded) return BadRequest<string>(result.Errors.FirstOrDefault().Description);
+            return Success((string)_sharedResources[SharedResourcesKeys.Success]);
         }
         #endregion
     }
