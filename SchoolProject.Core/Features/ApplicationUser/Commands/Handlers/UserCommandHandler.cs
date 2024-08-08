@@ -53,15 +53,10 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
 
             var users = await _userManager.Users.ToListAsync();
             //message
-            if (users.Count >= 0)
-            {
-                await _userManager.AddToRoleAsync(identityUser, "User");
-            }
-            else
-            {
-                await _userManager.AddToRoleAsync(identityUser, "Admin");
 
-            }
+            await _userManager.AddToRoleAsync(identityUser, "Admin");
+
+
 
             //create
             //success
