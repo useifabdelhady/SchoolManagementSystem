@@ -8,9 +8,11 @@ using SchoolProject.Service.Abstracts;
 namespace SchoolProject.Core.Features.Authorization.Commands.Handlers
 {
     public class RoleCommandHandler : ResponseHandler,
+
         IRequestHandler<AddRoleCommand, Response<string>>,
          IRequestHandler<EditRoleCommand, Response<string>>,
         IRequestHandler<DeleteRoleCommand, Response<string>>
+
     {
         #region MyRegion
         private readonly IStringLocalizer<SharedResources> _stringLocalizer;
@@ -33,6 +35,7 @@ namespace SchoolProject.Core.Features.Authorization.Commands.Handlers
             if (result == "Success") return Success("");
             return BadRequest<string>(_stringLocalizer[SharedResourcesKeys.AddFailed]);
         }
+
         public async Task<Response<string>> Handle(EditRoleCommand request, CancellationToken cancellationToken)
         {
             var result = await _authorizationService.EditRoleAsync(request);
@@ -51,6 +54,7 @@ namespace SchoolProject.Core.Features.Authorization.Commands.Handlers
             else
                 return BadRequest<string>(result);
         }
+
         #endregion
     }
 }

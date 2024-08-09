@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
+
 using SchoolProject.Data.DTOS;
+
 using SchoolProject.Data.Entities.Identity;
 using SchoolProject.Infrustucture.Data;
 using SchoolProject.Service.Abstracts;
@@ -81,6 +83,7 @@ namespace SchoolProject.Service.Implementations
             if (role == null) return false;
             else return true;
         }
+
 
         #endregion
     }
