@@ -186,6 +186,12 @@
   <data name="Required" xml:space="preserve">
     <value>هذا الحقل مطلوب</value>
   </data>
+  <data name="RoleIsUsed" xml:space="preserve">
+    <value>هذه الصلاحيه مستخدمه بالفعل </value>
+  </data>
+  <data name="RoleNotExist" xml:space="preserve">
+    <value>هذه الصلاحيه ليست موجوده</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>تم العمليه بنجاح</value>
   </data>
