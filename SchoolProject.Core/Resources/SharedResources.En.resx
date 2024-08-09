@@ -186,6 +186,12 @@
   <data name="Required" xml:space="preserve">
     <value>This Field Is Reqired</value>
   </data>
+  <data name="RoleIsUsed" xml:space="preserve">
+    <value>Role Is Used</value>
+  </data>
+  <data name="RoleNotExist" xml:space="preserve">
+    <value>Role Not Exist</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>Operation Done Successfully</value>
   </data>

@@ -63,6 +63,10 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
 
             }
 
+            await _userManager.AddToRoleAsync(identityUser, "Admin");
+
+
+
             //create
             //success
             return Created("");
