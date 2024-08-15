@@ -129,6 +129,9 @@
   <data name="ChangePassFailed" xml:space="preserve">
     <value>Change Password Failed</value>
   </data>
+  <data name="ConfirmEmailDone" xml:space="preserve">
+    <value>Confirm Email Done</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>Created Successfully</value>
   </data>
@@ -144,11 +147,44 @@
   <data name="DepartmentIsNotExist" xml:space="preserve">
     <value>Department id is Not Exist</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="EmailIsExist" xml:space="preserve">
     <value>Email Is Already Exist</value>
   </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Email Not Confirmed</value>
+  </data>
+  <data name="ErrorWhenConfirmEmail" xml:space="preserve">
+    <value>Error When Confirm Email</value>
+  </data>
+  <data name="FailedToAddNewClaims" xml:space="preserve">
+    <value>Failed To Add New Claims</value>
+  </data>
+  <data name="FailedToAddNewRoles" xml:space="preserve">
+    <value>Failed To Add New Roles</value>
+  </data>
+  <data name="FailedToRemoveOldClaims" xml:space="preserve">
+    <value>Failed To Remove Old Claims</value>
+  </data>
+  <data name="FailedToRemoveOldRoles" xml:space="preserve">
+    <value>Failed To Remove Old Roles</value>
+  </data>
+  <data name="FailedToUpdateClaims" xml:space="preserve">
+    <value>Failed To Update Claims</value>
+  </data>
+  <data name="FailedToUpdateUserRoles" xml:space="preserve">
+    <value>Failed To Update User Roles</value>
+  </data>
+  <data name="FailedToUploadImage" xml:space="preserve">
+    <value>Failed To Up load Image</value>
+  </data>
   <data name="FailToAddUser" xml:space="preserve">
     <value>Faild To Add User</value>
+  </data>
+  <data name="InvaildCode" xml:space="preserve">
+    <value> Invaild Code</value>
   </data>
   <data name="IsExist" xml:space="preserve">
     <value>Is Already Exist</value>
@@ -159,8 +195,14 @@
   <data name="MaxLengthis100" xml:space="preserve">
     <value>The Max Length Is 100</value>
   </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>No Image</value>
   </data>
   <data name="NotEmpty" xml:space="preserve">
     <value>Must Not Empty</value>
@@ -192,6 +234,9 @@
   <data name="RoleNotExist" xml:space="preserve">
     <value>Role Not Exist</value>
   </data>
+  <data name="SendEmailFailed" xml:space="preserve">
+    <value>Send Email Failed</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>Operation Done Successfully</value>
   </data>
@@ -200,6 +245,12 @@
   </data>
   <data name="TokenIsNotExpired" xml:space="preserve">
     <value>Token Is Not Expired</value>
+  </data>
+  <data name="TryAgainInAnotherTime" xml:space="preserve">
+    <value>Try Again In Another Time</value>
+  </data>
+  <data name="TryToRegisterAgain" xml:space="preserve">
+    <value>Try To Register Again</value>
   </data>
   <data name="UnAuthorized" xml:space="preserve">
     <value>You Are Not Authorized To Access This Resources</value>
@@ -212,6 +263,9 @@
   </data>
   <data name="UpdateFailed" xml:space="preserve">
     <value>Update Operation Failed</value>
+  </data>
+  <data name="UserIsNotFound" xml:space="preserve">
+    <value>User Is Not Found</value>
   </data>
   <data name="UserName" xml:space="preserve">
     <value>User Name</value>

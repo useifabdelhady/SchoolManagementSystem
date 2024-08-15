@@ -94,6 +94,21 @@ namespace SchoolProject.Infrustucture
             }
            });
             });
+            services.AddAuthorization(option =>
+            {
+                option.AddPolicy("CreateStudent", policy =>
+                {
+                    policy.RequireClaim("Create Student", "True");
+                });
+                option.AddPolicy("DeleteStudent", policy =>
+                {
+                    policy.RequireClaim("Delete Student", "True");
+                });
+                option.AddPolicy("EditStudent", policy =>
+                {
+                    policy.RequireClaim("Edit Student", "True");
+                });
+            });
             return services;
         }
     }

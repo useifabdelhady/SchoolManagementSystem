@@ -129,6 +129,9 @@
   <data name="ChangePassFailed" xml:space="preserve">
     <value>حدث خطا اثناء عمليه تغيير الباسورد</value>
   </data>
+  <data name="ConfirmEmailDone" xml:space="preserve">
+    <value>تم تاكيد الايميل</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>تم الاضافه بنجاح</value>
   </data>
@@ -144,11 +147,44 @@
   <data name="DepartmentIsNotExist" xml:space="preserve">
     <value>هذا القسم غير موجود</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>ايميل</value>
+  </data>
   <data name="EmailIsExist" xml:space="preserve">
     <value>الايميل الذى ادخلته موجود بالفعل</value>
   </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>لم يتم تاكيد الايميل</value>
+  </data>
+  <data name="ErrorWhenConfirmEmail" xml:space="preserve">
+    <value>حدث خطا اثناء تاكيد الايميل</value>
+  </data>
+  <data name="Failed To Add New Roles" xml:space="preserve">
+    <value>فشلت عملية اضافة صلاحيات جديدة للمستخدم</value>
+  </data>
+  <data name="FailedToAddNewClaims" xml:space="preserve">
+    <value>حدث حطأ اثناء اضافة صلاحيات الاستخدام  جديدة للمستخدمين</value>
+  </data>
+  <data name="FailedToRemoveOldClaims" xml:space="preserve">
+    <value>حدث حطأ اثناء حذف صلاحيات الاستخدام القديمة للمستخدمين</value>
+  </data>
+  <data name="FailedToRemoveOldRoles" xml:space="preserve">
+    <value>فشلت عملية حذف الصلاحيات القديمة</value>
+  </data>
+  <data name="FailedToUpdateClaims" xml:space="preserve">
+    <value>حدث حطأ اثناء تحديث صلاحيات الاستخدام للمستخدمين</value>
+  </data>
+  <data name="FailedToUpdateUserRoles" xml:space="preserve">
+    <value>فشلت عملية تحديث الصلاحيات للمستخدم</value>
+  </data>
+  <data name="FailedToUploadImage" xml:space="preserve">
+    <value>حدث خطأ اثناء رفع الصورة</value>
+  </data>
   <data name="FailToAddUser" xml:space="preserve">
     <value>حدث خطا اثناء اضافه المستخدم</value>
+  </data>
+  <data name="InvaildCode" xml:space="preserve">
+    <value>رمز خطا</value>
   </data>
   <data name="IsExist" xml:space="preserve">
     <value>موجود بالفعل</value>
@@ -159,8 +195,14 @@
   <data name="MaxLengthis100" xml:space="preserve">
     <value>يجب ان لا يذيد طول النص عن 100</value>
   </data>
+  <data name="Message" xml:space="preserve">
+    <value>رساله</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>لا يوجد صوره</value>
   </data>
   <data name="NotEmpty" xml:space="preserve">
     <value>لا يمكن ترك العنصر فارغ</value>
@@ -192,6 +234,9 @@
   <data name="RoleNotExist" xml:space="preserve">
     <value>هذه الصلاحيه ليست موجوده</value>
   </data>
+  <data name="SendEmailFailed" xml:space="preserve">
+    <value>حدث خطأ اثناء ارسال الايميل</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>تم العمليه بنجاح</value>
   </data>
@@ -200,6 +245,12 @@
   </data>
   <data name="TokenIsNotExpired" xml:space="preserve">
     <value>رمز الوصول الذي تستخدمة ليس منتهي الصلاحية</value>
+  </data>
+  <data name="TryAgainInAnotherTime" xml:space="preserve">
+    <value>حدث خطأ اثناء العملية من فضلك حاول  مره اخري في وقت لاحق</value>
+  </data>
+  <data name="TryToRegisterAgain" xml:space="preserve">
+    <value>حدث خطأ غير متوقع اعد المحاولة مره اخري</value>
   </data>
   <data name="UnAuthorized" xml:space="preserve">
     <value>لاتملك الصلاحيه للوصول لتلك المصادر</value>
@@ -212,6 +263,9 @@
   </data>
   <data name="UpdateFailed" xml:space="preserve">
     <value>حدث خطا اثناء عمليه تحديث البيانات</value>
+  </data>
+  <data name="UserIsNotFound" xml:space="preserve">
+    <value>المستخدم هذا غير موجود</value>
   </data>
   <data name="UserName" xml:space="preserve">
     <value>اسم المستخدم</value>
