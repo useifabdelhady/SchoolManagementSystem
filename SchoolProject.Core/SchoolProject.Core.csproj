@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <Compile Remove="Features\Authentication\Commands\Results\**" />
+    <Compile Remove="Features\Departments\Commands\**" />
     <EmbeddedResource Remove="Features\Authentication\Commands\Results\**" />
+    <EmbeddedResource Remove="Features\Departments\Commands\**" />
     <None Remove="Features\Authentication\Commands\Results\**" />
+    <None Remove="Features\Departments\Commands\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Departments\Commands\" />
     <Folder Include="Mapping\Departments\CommandMapping\" />
   </ItemGroup>
 

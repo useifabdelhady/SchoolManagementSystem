@@ -7,13 +7,16 @@ using SchoolProject.Core.Features.Departments.Queries.Results;
 using SchoolProject.Core.Resources;
 using SchoolProject.Core.Wrappers;
 using SchoolProject.Data.Entities;
+using SchoolProject.Data.Entities.Procedures;
 using SchoolProject.Service.Abstracts;
 using System.Linq.Expressions;
 
 namespace SchoolProject.Core.Features.Departments.Queries.Handlers
 {
     public class DepartmentQueryHandler : ResponseHandler,
-                                             IRequestHandler<GetDepartmentByIDQuery, Response<GetDepartmentByIDResponse>>
+                                             IRequestHandler<GetDepartmentByIDQuery, Response<GetDepartmentByIDResponse>>,
+          IRequestHandler<GetDepartmentStudentListCountQuery, Response<List<GetDepartmentStudentListCountResults>>>,
+         IRequestHandler<GetDepartmentStudentCountByIDQuery, Response<GetDepartmentStudentCountByIDResult>>
     {
         #region Fields
         private readonly IDepartmentService _departmentService;
@@ -54,6 +57,23 @@ namespace SchoolProject.Core.Features.Departments.Queries.Handlers
             // Log.Information($"Get Department By Id {request.Id}!");
             //return response
             return Success(mapper);
+        }
+
+        public async Task<Response<List<GetDepartmentStudentListCountResults>>> Handle(GetDepartmentStudentListCountQuery request, CancellationToken cancellationToken)
+        {
+            var viewDepartmentResult = await _departmentService.GetViewDepartmentDataAsync();
+            var result = _mapper.Map<List<GetDepartmentStudentListCountResults>>(viewDepartmentResult);
+            return Success(result);
+
+        }
+
+        public async Task<Response<GetDepartmentStudentCountByIDResult>> Handle(GetDepartmentStudentCountByIDQuery request, CancellationToken cancellationToken)
+        {
+            var parameters = _mapper.Map<DepartmentStudentCountProcParameters>(request);
+            var procResult = await _departmentService.GetDepartmentStudentCountProcs(parameters);
+            var result = _mapper.Map<GetDepartmentStudentCountByIDResult>(procResult.FirstOrDefault());
+            return Success(result);
+
         }
         #endregion
     }
