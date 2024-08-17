@@ -9,6 +9,7 @@ namespace SchoolProject.Infrustucture.Data
 {
     public class ApplicationDBContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, IdentityUserRole<int>, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
+
         public ApplicationDBContext()
         {
 
@@ -28,6 +29,7 @@ namespace SchoolProject.Infrustucture.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
 
         }
     }
