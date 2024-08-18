@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SchoolProject.Api.Base;
 using SchoolProject.Core.Features.Departments.Queries.Models;
 using SchoolProject.Data.AppMetaData;
@@ -6,6 +7,7 @@ using SchoolProject.Data.AppMetaData;
 namespace SchoolProject.Api.Controllers
 {
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class DepartmentController : AppControllerBase
     {
         [HttpGet(Router.DepartmentRouting.GetByID)]
@@ -13,7 +15,6 @@ namespace SchoolProject.Api.Controllers
         {
             return NewResult(await Mediator.Send(query));
         }
-
         [HttpGet(Router.DepartmentRouting.GetDepartmentStudentsCount)]
         public async Task<IActionResult> GetDepartmentStudentsCount()
         {

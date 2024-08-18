@@ -9,10 +9,13 @@
   <ItemGroup>
     <Compile Remove="Features\Authentication\Commands\Results\**" />
     <Compile Remove="Features\Departments\Commands\**" />
+    <Compile Remove="Mapping\Departments\CommandMapping\**" />
     <EmbeddedResource Remove="Features\Authentication\Commands\Results\**" />
     <EmbeddedResource Remove="Features\Departments\Commands\**" />
+    <EmbeddedResource Remove="Mapping\Departments\CommandMapping\**" />
     <None Remove="Features\Authentication\Commands\Results\**" />
     <None Remove="Features\Departments\Commands\**" />
+    <None Remove="Mapping\Departments\CommandMapping\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,10 +31,7 @@
     <PackageReference Include="MediatR" Version="12.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="8.0.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mapping\Departments\CommandMapping\" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
   </ItemGroup>
 
 </Project>

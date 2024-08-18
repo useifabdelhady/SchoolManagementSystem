@@ -13,6 +13,7 @@ using SchoolProject.Infrustucture;
 using SchoolProject.Infrustucture.Data;
 using SchoolProject.Infrustucture.Seeder;
 using SchoolProject.Service;
+using Serilog;
 using System.Globalization;
 
 
@@ -83,6 +84,11 @@ builder.Services.AddTransient<IUrlHelper>(x =>
     return factory.GetUrlHelper(actionContext);
 });
 builder.Services.AddTransient<AuthFilter>();
+
+//Serilog
+Log.Logger = new LoggerConfiguration()
+              .ReadFrom.Configuration(builder.Configuration).CreateLogger();
+builder.Services.AddSerilog();
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())

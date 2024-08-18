@@ -13,9 +13,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace SchoolProject.Api.Controllers
 {
     [ApiController]
-
-    [Authorize]
-
+    [Authorize(Roles = "Admin")]
     public class AuthorizationController : AppControllerBase
     {
         [HttpPost(Router.AuthorizationRouting.Create)]
@@ -24,8 +22,6 @@ namespace SchoolProject.Api.Controllers
             var response = await Mediator.Send(command);
             return NewResult(response);
         }
-
-
         [HttpPost(Router.AuthorizationRouting.Edit)]
         public async Task<IActionResult> Edit([FromForm] EditRoleCommand command)
         {
@@ -79,6 +75,5 @@ namespace SchoolProject.Api.Controllers
             var response = await Mediator.Send(command);
             return NewResult(response);
         }
-
     }
 }

@@ -3,6 +3,8 @@ using SchoolProject.Data.Entities;
 using SchoolProject.Data.Enums;
 using SchoolProject.Infrustucture.Abstracts;
 using SchoolProject.Service.Abstracts;
+using Serilog;
+
 
 namespace SchoolProject.Service.Implementations
 {
@@ -92,9 +94,10 @@ namespace SchoolProject.Service.Implementations
                 await trans.CommitAsync();
                 return "Success";
             }
-            catch
+            catch (Exception ex)
             {
                 await trans.RollbackAsync();
+                Log.Error(ex.Message);
                 return "Falied";
             }
 
