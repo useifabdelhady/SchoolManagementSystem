@@ -11,6 +11,7 @@ using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities;
 using SchoolProject.Data.Enums;
 using SchoolProject.Service.Abstracts;
+using SchoolProject.XUnitTest.TestModels;
 using System.Net;
 
 namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
