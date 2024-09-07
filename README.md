@@ -1,4 +1,4 @@
-# School Mangement System
+# School Management System
 
 ## Description
 SchoolMangementSystem Using Asp.net Core Web Api Using Clean Architecture Based On Code First
